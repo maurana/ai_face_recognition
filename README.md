@@ -14,7 +14,12 @@ Face recognition in artificial intelligence technology for the development of Ro
 * `Pymongo v3.12.3`
 * `MongoDB`
 
-> Build & Run procedure
+> Command
+
+Installing package
+```bash
+> pip install -r package.txt
+```
 
 Migrate to Database
 ```bash
