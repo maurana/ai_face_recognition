@@ -11,9 +11,16 @@ Face recognition in artificial intelligence technology for the development of Ro
 * `Facenet v1.0.5`
 * `Arcface v0.0.8`
 * `Djongo v1.3.6`
+* `Pymongo v3.12.3`
 * `MongoDB`
 
 > Build & Run procedure
+
+Migrate to Database
+```bash
+> python manage.py makemigrations api
+> python manage.py migrate
+```
 
 Starting the server
 ```bash
