@@ -18,7 +18,7 @@ Face recognition in artificial intelligence technology for the development of Ro
 
 Installing package
 ```bash
-> pip install -r package.txt
+> pip install -r requirements.txt
 ```
 
 Migrate to Database
