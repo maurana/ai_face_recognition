@@ -34,7 +34,6 @@ class People(models.Model):
     def __str__(self):
         return self.name
 
-
 @receiver(models.signals.post_delete, sender=People)
 def auto_delete_file_on_delete(sender, instance, *args, **kwargs):
     if instance.face:

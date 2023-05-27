@@ -3,8 +3,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from django.http import Http404
-from api.models import People
-from api.serializers import PeopleSerializer
+
+from api.models.people import People
+from api.serializers.people import PeopleSerializer
 
 class PeopleList(APIView):
 
