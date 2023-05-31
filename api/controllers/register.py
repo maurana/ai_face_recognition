@@ -19,8 +19,6 @@ from django.core.files.storage import FileSystemStorage
 from api.models.people import People
 from api.serializers.people import PeopleSerializer
 
-workers = 0 if os.name == 'nt' else 4
-
 class Register(APIView):
 
     def post(self, request, format=None):
