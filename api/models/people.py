@@ -2,7 +2,6 @@ import os
 import re
 import string
 import random
-from datetime import datetime 
 from djongo import models
 from django.conf import settings
 from djongo.storage import GridFSStorage
@@ -14,20 +13,18 @@ default_storage = FileSystemStorage()
 grid_fs_storage = GridFSStorage(collection='media', base_url=''.join([settings.BASE_URL, 'media/']))
 
 def facesave(instance, filename):
-    today = datetime.now()
-
     path = 'face/'
-    dt = str(today.strftime("%Y%m%d%H%M%S"))
     people = str(re.sub(r"\s+", "", instance.name.lower()))
     ext = "." + filename.split('.')[-1]
     randtext = ''.join(random.choice(string.ascii_letters) for i in range(15))
-    filename_reformat = people + randtext + dt + ext
+    filename_reformat = people + '-' + randtext + ext
     return os.path.join(path, filename_reformat)
 
 # people model
 class People(models.Model):
 
     # field model
+    p_id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='P_ID')
     name = models.CharField(max_length=200)
     face = models.ImageField(upload_to=facesave,storage=default_storage)
 

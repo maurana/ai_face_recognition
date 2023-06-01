@@ -5,4 +5,4 @@ class RecognitionSerializer(serializers.ModelSerializer):
  
     class Meta:
         model = People
-        fields = ('id','face')
+        fields = ('p_id','face')
